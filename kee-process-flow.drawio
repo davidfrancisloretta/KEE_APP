@@ -1,0 +1,391 @@
+<mxfile host="app.diagrams.net" modified="2026-03-14" agent="5.0" version="21.0.0">
+  <diagram id="cp" name="1. Content Pipeline">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="cp_title" value="KEE App — Content Pipeline" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#18181B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cp_sub" value="How raw lesson files flow from Admin upload to published learning content" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#71717A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="600" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cp_lh1" value="ADMIN" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#71717A;fillColor=#F4F4F5;strokeColor=#E4E4E7;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="100" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="cp_lh2" value="SYSTEM / AI" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#1D4ED8;fillColor=#EFF6FF;strokeColor=#BFDBFE;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="310" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="cp_lh3" value="DATABASE" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#15803D;fillColor=#F0FDF4;strokeColor=#BBF7D0;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="100" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="cp_lh4" value="REVIEW" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#C2410C;fillColor=#FFF7ED;strokeColor=#FED7AA;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="770" width="100" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cp1" value="&lt;b&gt;Navigate to&lt;/b&gt;&lt;br&gt;/admin/upload" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="140" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cp2" value="&lt;b&gt;Choose File&lt;/b&gt;&lt;br&gt;DOCX / PPTX / PDF&lt;br&gt;+ Age Group" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="420" y="130" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cp3" value="&lt;b&gt;Click Upload&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="140" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cp4" value="&lt;b&gt;View Result&lt;/b&gt;&lt;br&gt;Title + Steps +&lt;br&gt;Modality Coverage" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1100" y="130" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cs1" value="&lt;b&gt;POST /api/admin/upload&lt;/b&gt;&lt;br&gt;multipart/form-data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E40AF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="360" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cs2" value="&lt;b&gt;Save File to Disk&lt;/b&gt;&lt;br&gt;/uploads/{uuid}.ext&lt;br&gt;Insert contentUploads" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E40AF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="420" y="350" width="190" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cs3" value="&lt;b&gt;POST /api/admin/parse&lt;/b&gt;&lt;br&gt;{ uploadId }" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E40AF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="360" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cs4" value="&lt;b&gt;Extract Text&lt;/b&gt;&lt;br&gt;DOCX: mammoth&lt;br&gt;PPTX: officeparser&lt;br&gt;PDF: pdf-parse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E40AF;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="900" y="340" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cs5" value="&lt;b&gt;Tag Modalities&lt;/b&gt;&lt;br&gt;READ / WRITE / LISTEN&lt;br&gt;SPEAK / THINK / OBSERVE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#22C55E;fontColor=#14532D;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1140" y="340" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cs6" value="&lt;b&gt;Update Status&lt;/b&gt;&lt;br&gt;review" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#78350F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="360" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cdb1" value="&lt;b&gt;contentUploads&lt;/b&gt;&lt;br&gt;status: uploaded to parsed" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="380" y="650" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cdb2" value="&lt;b&gt;lessons + lessonSteps&lt;/b&gt;&lt;br&gt;JSONB content with modalities" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="900" y="650" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="cdb3" value="&lt;b&gt;lessonReviews&lt;/b&gt;&lt;br&gt;reviewer, status, notes" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="650" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cr1" value="&lt;b&gt;/admin/review&lt;/b&gt;&lt;br&gt;View Lesson + Steps&lt;br&gt;+ Modality Badges" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#FB923C;fontColor=#7C2D12;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="900" y="810" width="180" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cr_gate" value="Decision" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#78350F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="800" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cr_ok" value="&lt;b&gt;Approved&lt;/b&gt;&lt;br&gt;status: approved&lt;br&gt;Available in /learn" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="800" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cr_rev" value="&lt;b&gt;Revision&lt;/b&gt;&lt;br&gt;status: review" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;fontColor=#7F1D1D;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="920" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cr_rej" value="&lt;b&gt;Rejected&lt;/b&gt;&lt;br&gt;status: archived" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#F87171;fontColor=#7F1D1D;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="920" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ce1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#93C5FD;strokeWidth=2;" edge="1" source="cp1" target="cp2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#93C5FD;strokeWidth=2;" edge="1" source="cp2" target="cp3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#3B82F6;strokeWidth=2;dashed=1;" edge="1" source="cp3" target="cs1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#3B82F6;strokeWidth=2;" edge="1" source="cs1" target="cs2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;dashed=1;" edge="1" source="cs2" target="cdb1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#3B82F6;strokeWidth=2;" edge="1" source="cs2" target="cs3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce7" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#3B82F6;strokeWidth=2;" edge="1" source="cs3" target="cs4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;" edge="1" source="cs4" target="cs5" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce9" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;dashed=1;" edge="1" source="cs5" target="cdb2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce10" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#F59E0B;strokeWidth=2;" edge="1" source="cs5" target="cs6" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce11" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#93C5FD;strokeWidth=2;dashed=1;" edge="1" source="cs5" target="cp4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce12" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FB923C;strokeWidth=2;dashed=1;" edge="1" source="cs6" target="cr1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce13" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;dashed=1;" edge="1" source="cdb2" target="cr1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce14" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#F59E0B;strokeWidth=2;" edge="1" source="cr1" target="cr_gate" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce15" value="Approve" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;fontColor=#14532D;fontStyle=1;" edge="1" source="cr_gate" target="cr_ok" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce16" value="Revise" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#F59E0B;strokeWidth=2;fontColor=#78350F;fontStyle=1;" edge="1" source="cr_gate" target="cr_rev" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce17" value="Reject" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#EF4444;strokeWidth=2;fontColor=#7F1D1D;fontStyle=1;" edge="1" source="cr_gate" target="cr_rej" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ce18" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;dashed=1;" edge="1" source="cr_ok" target="cdb3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="leg_bg" value="Learning Modalities" style="swimlane;fillColor=#F4F4F5;strokeColor=#E4E4E7;fontColor=#18181B;fontSize=12;fontStyle=1;startSize=28;" vertex="1" parent="1">
+          <mxGeometry x="180" y="810" width="620" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="READ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=11;fontStyle=1;" vertex="1" parent="leg_bg">
+          <mxGeometry x="10" y="38" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="WRITE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#FCD34D;fontColor=#78350F;fontSize=11;fontStyle=1;" vertex="1" parent="leg_bg">
+          <mxGeometry x="100" y="38" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="LISTEN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#A78BFA;fontColor=#4C1D95;fontSize=11;fontStyle=1;" vertex="1" parent="leg_bg">
+          <mxGeometry x="190" y="38" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="SPEAK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#6EE7B7;fontColor=#064E3B;fontSize=11;fontStyle=1;" vertex="1" parent="leg_bg">
+          <mxGeometry x="280" y="38" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" value="THINK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#FDB980;fontColor=#7C2D12;fontSize=11;fontStyle=1;" vertex="1" parent="leg_bg">
+          <mxGeometry x="370" y="38" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6" value="OBSERVE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7F3;strokeColor=#F9A8D4;fontColor=#701A75;fontSize=11;fontStyle=1;" vertex="1" parent="leg_bg">
+          <mxGeometry x="460" y="38" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_note" value="Each lesson section is tagged with 1-2 modalities to ensure multi-modal coverage" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;fontColor=#71717A;" vertex="1" parent="leg_bg">
+          <mxGeometry x="10" y="78" width="580" height="24" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="lj" name="2. Learning Journey">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="lj_title" value="KEE App — Learning Journey" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#18181B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="500" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lj_sub" value="How a student progresses from login to earning badges and tracking growth" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#71717A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="600" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="stg1" value="1. ENTRY" style="rounded=1;fillColor=#F4F4F5;strokeColor=#E4E4E7;fontColor=#71717A;fontSize=11;fontStyle=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="100" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stg2" value="2. DISCOVER" style="rounded=1;fillColor=#F4F4F5;strokeColor=#E4E4E7;fontColor=#71717A;fontSize=11;fontStyle=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="100" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stg3" value="3. LEARN" style="rounded=1;fillColor=#F4F4F5;strokeColor=#E4E4E7;fontColor=#71717A;fontSize=11;fontStyle=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="100" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stg4" value="4. ASSESS" style="rounded=1;fillColor=#F4F4F5;strokeColor=#E4E4E7;fontColor=#71717A;fontSize=11;fontStyle=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="100" width="120" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="stg5" value="5. REWARD" style="rounded=1;fillColor=#F4F4F5;strokeColor=#E4E4E7;fontColor=#71717A;fontSize=11;fontStyle=1;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="100" width="120" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="j_land" value="&lt;b&gt;Landing Page&lt;/b&gt;&lt;br&gt;/" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="120" y="160" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j_login" value="&lt;b&gt;Login / Register&lt;/b&gt;&lt;br&gt;/auth/login&lt;br&gt;/auth/register" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="120" y="270" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j_role" value="Role?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#78350F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="130" y="390" width="120" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="j_browse" value="&lt;b&gt;Browse Lessons&lt;/b&gt;&lt;br&gt;/learn&lt;br&gt;Filter by series, age" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="150" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j_series" value="&lt;b&gt;View Series&lt;/b&gt;&lt;br&gt;/learn/series/[slug]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="270" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j_select" value="&lt;b&gt;Select Lesson&lt;/b&gt;&lt;br&gt;/learn/lesson/[id]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="380" y="380" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="j_player" value="&lt;b&gt;Lesson Player&lt;/b&gt;&lt;br&gt;LessonPlayer.tsx" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#FB923C;fontColor=#7C2D12;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="160" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j_s1" value="Attention Getter&lt;br&gt;OBSERVE + SPEAK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7F3;strokeColor=#F9A8D4;fontColor=#701A75;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="260" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="j_s2" value="Bible Story&lt;br&gt;LISTEN + READ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#A78BFA;fontColor=#4C1D95;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="318" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="j_s3" value="Application&lt;br&gt;THINK + WRITE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#FDB980;fontColor=#7C2D12;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="376" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="j_s4" value="Memory Verse&lt;br&gt;READ + SPEAK" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="434" width="160" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="j_save" value="Progress auto-saved&lt;br&gt;userProgress table" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F4F5;strokeColor=#E4E4E7;fontColor=#71717A;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="494" width="160" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="j_quiz" value="&lt;b&gt;Quiz&lt;/b&gt;&lt;br&gt;/learn/quiz/[id]&lt;br&gt;Multiple choice" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#78350F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="920" y="160" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j_score" value="&lt;b&gt;Score Quiz&lt;/b&gt;&lt;br&gt;quizAttempts saved&lt;br&gt;XP calculated" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#78350F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="920" y="280" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j_pass" value="Pass?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#78350F;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="940" y="400" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="j_retry" value="Retry&lt;br&gt;(up to 3x)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#FCA5A5;fontColor=#7F1D1D;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="820" y="500" width="120" height="48" as="geometry" />
+        </mxCell>
+
+        <mxCell id="j_xp" value="&lt;b&gt;Award XP&lt;/b&gt;&lt;br&gt;+10 XP per step&lt;br&gt;gamification router" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="160" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j_badge" value="&lt;b&gt;Check Badges&lt;/b&gt;&lt;br&gt;Unlock if criteria met&lt;br&gt;userBadges table" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="280" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="j_streak" value="&lt;b&gt;Update Streak&lt;/b&gt;&lt;br&gt;streaks table" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="400" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="j_dash" value="&lt;b&gt;Dashboard&lt;/b&gt;&lt;br&gt;/dashboard&lt;br&gt;Progress + Badges + Streak" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="510" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="je1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#71717A;strokeWidth=2;" edge="1" source="j_land" target="j_login" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#71717A;strokeWidth=2;" edge="1" source="j_login" target="j_role" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je3" value="student" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;fontColor=#14532D;fontStyle=1;" edge="1" source="j_role" target="j_browse" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;" edge="1" source="j_browse" target="j_series" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;" edge="1" source="j_series" target="j_select" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FB923C;strokeWidth=2;" edge="1" source="j_select" target="j_player" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je7" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FB923C;strokeWidth=2;" edge="1" source="j_player" target="j_s1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FB923C;strokeWidth=2;" edge="1" source="j_s1" target="j_s2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je9" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FB923C;strokeWidth=2;" edge="1" source="j_s2" target="j_s3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je10" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FB923C;strokeWidth=2;" edge="1" source="j_s3" target="j_s4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je11" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#F59E0B;strokeWidth=2;" edge="1" source="j_s4" target="j_quiz" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je12" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#F59E0B;strokeWidth=2;" edge="1" source="j_quiz" target="j_score" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je13" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#F59E0B;strokeWidth=2;" edge="1" source="j_score" target="j_pass" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je14" value="Fail" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#EF4444;strokeWidth=2;fontColor=#7F1D1D;fontStyle=1;" edge="1" source="j_pass" target="j_retry" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je15" value="Pass" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;fontColor=#14532D;fontStyle=1;" edge="1" source="j_pass" target="j_xp" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je16" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;" edge="1" source="j_xp" target="j_badge" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je17" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;" edge="1" source="j_badge" target="j_streak" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="je18" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;" edge="1" source="j_streak" target="j_dash" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="sa" name="3. System Architecture">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="sa_title" value="KEE App — System Architecture" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#18181B;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="600" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_sub" value="Next.js 14 App Router · tRPC v10 · Drizzle ORM · PostgreSQL 15 · Auth.js · Docker Compose" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=13;fontColor=#71717A;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="700" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="client_box" value="CLIENT LAYER" style="swimlane;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E40AF;fontSize=13;fontStyle=1;startSize=30;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="340" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="browser" value="&lt;b&gt;Web Browser&lt;/b&gt;&lt;br&gt;React 18 + Next.js Client Components" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=12;" vertex="1" parent="client_box">
+          <mxGeometry x="20" y="50" width="240" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="trpc_client" value="&lt;b&gt;tRPC React Query Client&lt;/b&gt;&lt;br&gt;Type-safe hooks · Auto-invalidation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#93C5FD;fontColor=#1E3A5F;fontSize=12;" vertex="1" parent="client_box">
+          <mxGeometry x="20" y="124" width="240" height="54" as="geometry" />
+        </mxCell>
+
+        <mxCell id="server_box" value="NEXT.JS SERVER (App Router)" style="swimlane;fillColor=#FFF7ED;strokeColor=#FB923C;fontColor=#7C2D12;fontSize=13;fontStyle=1;startSize=30;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="100" width="560" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="routes_box" value="&lt;b&gt;App Routes (12)&lt;/b&gt;&lt;br&gt;/ · /auth/* · /learn/*&lt;br&gt;/admin/* · /dashboard · /teacher · /parent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#FDB980;fontColor=#7C2D12;fontSize=11;" vertex="1" parent="server_box">
+          <mxGeometry x="20" y="50" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="authjs_box" value="&lt;b&gt;Auth.js v5&lt;/b&gt;&lt;br&gt;JWT sessions&lt;br&gt;Role-based middleware" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#FDB980;fontColor=#7C2D12;fontSize=11;" vertex="1" parent="server_box">
+          <mxGeometry x="290" y="50" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="trpc_server_box" value="&lt;b&gt;tRPC Routers (8)&lt;/b&gt;&lt;br&gt;auth · lesson · admin · quiz&lt;br&gt;progress · gamification · dashboard · user&lt;br&gt;&lt;i&gt;All via Drizzle ORM&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#78350F;fontSize=11;" vertex="1" parent="server_box">
+          <mxGeometry x="20" y="150" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="rest_box" value="&lt;b&gt;REST API Routes (2)&lt;/b&gt;&lt;br&gt;POST /api/admin/upload&lt;br&gt;POST /api/admin/parse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF3C7;strokeColor=#F59E0B;fontColor=#78350F;fontSize=11;" vertex="1" parent="server_box">
+          <mxGeometry x="290" y="150" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="parse_box" value="&lt;b&gt;Content Parsing (scripts/)&lt;/b&gt;&lt;br&gt;mammoth (DOCX) · officeparser (PPTX) · pdf-parse (PDF)&lt;br&gt;SECTION_MODALITIES tagger" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#22C55E;fontColor=#14532D;fontSize=11;" vertex="1" parent="server_box">
+          <mxGeometry x="20" y="270" width="490" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uploads_box" value="&lt;b&gt;File System&lt;/b&gt;&lt;br&gt;/uploads/{uuid}.ext&lt;br&gt;DOCX · PPTX · PDF" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D1FAE5;strokeColor=#22C55E;fontColor=#14532D;fontSize=11;" vertex="1" parent="server_box">
+          <mxGeometry x="20" y="370" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="middleware_box" value="&lt;b&gt;Middleware&lt;/b&gt;&lt;br&gt;Route protection&lt;br&gt;by role" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#FDB980;fontColor=#7C2D12;fontSize=11;" vertex="1" parent="server_box">
+          <mxGeometry x="260" y="370" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="db_box" value="DATA LAYER" style="swimlane;fillColor=#F0FDF4;strokeColor=#22C55E;fontColor=#14532D;fontSize=13;fontStyle=1;startSize=30;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="100" width="540" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="pg_box" value="&lt;b&gt;PostgreSQL 15&lt;/b&gt; (Docker · port 5433)" style="swimlane;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=12;fontStyle=1;startSize=28;html=1;" vertex="1" parent="db_box">
+          <mxGeometry x="20" y="50" width="500" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl1" value="users" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="10" y="36" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl2" value="lessons" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="110" y="36" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl3" value="lessonSteps" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="210" y="36" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl4" value="series" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="310" y="36" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl5" value="lessonReviews" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="400" y="36" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl6" value="quizzes" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="10" y="100" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl7" value="questions" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="110" y="100" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl8" value="quizAttempts" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="210" y="100" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl9" value="userProgress" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="310" y="100" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl10" value="badges" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="10" y="164" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl11" value="userBadges" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="110" y="164" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl12" value="streaks" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="210" y="164" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl13" value="contentUploads" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=8;fillColor=#D1FAE5;strokeColor=#34D399;fontColor=#064E3B;fontSize=11;" vertex="1" parent="pg_box">
+          <mxGeometry x="310" y="164" width="90" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="tbl_note" value="13 tables · managed via Drizzle ORM migrations" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;fontColor=#71717A;fontStyle=2;" vertex="1" parent="pg_box">
+          <mxGeometry x="10" y="225" width="460" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="future_box" value="PLANNED / FUTURE" style="swimlane;fillColor=#F4F4F5;strokeColor=#A1A1AA;fontColor=#71717A;fontSize=12;fontStyle=3;startSize=28;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="640" width="560" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fut1" value="Claude API&lt;br&gt;AI lesson generation" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F4F5;strokeColor=#A1A1AA;fontColor=#71717A;fontSize=11;dashed=1;" vertex="1" parent="future_box">
+          <mxGeometry x="20" y="40" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fut2" value="Redis&lt;br&gt;Session cache" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F4F5;strokeColor=#A1A1AA;fontColor=#71717A;fontSize=11;dashed=1;" vertex="1" parent="future_box">
+          <mxGeometry x="200" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fut3" value="S3 / Blob Storage&lt;br&gt;File hosting" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F4F5;strokeColor=#A1A1AA;fontColor=#71717A;fontSize=11;dashed=1;" vertex="1" parent="future_box">
+          <mxGeometry x="360" y="40" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="docker_note" value="&lt;b&gt;Docker Compose (dev)&lt;/b&gt;&lt;br&gt;Next.js :3000 · PostgreSQL :5433" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4F4F5;strokeColor=#E4E4E7;fontColor=#18181B;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="640" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sa_e1" value="HTTP" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#3B82F6;strokeWidth=2;fontColor=#1E40AF;fontStyle=1;" edge="1" source="browser" target="routes_box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_e2" value="tRPC" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#F59E0B;strokeWidth=2;fontColor=#78350F;fontStyle=1;" edge="1" source="trpc_client" target="trpc_server_box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_e3" value="SQL" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;fontColor=#14532D;fontStyle=1;" edge="1" source="trpc_server_box" target="pg_box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_e4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;" edge="1" source="rest_box" target="pg_box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_e5" value="session" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#A1A1AA;strokeWidth=1;dashed=1;fontColor=#71717A;" edge="1" source="authjs_box" target="pg_box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_e6" value="reads file" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#22C55E;strokeWidth=2;fontColor=#14532D;" edge="1" source="parse_box" target="uploads_box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sa_e7" value="calls" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#FB923C;strokeWidth=2;fontColor=#7C2D12;" edge="1" source="rest_box" target="parse_box" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+</mxfile>

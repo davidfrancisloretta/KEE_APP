@@ -1,0 +1,554 @@
+{
+  "scannedAt": "2026-03-14T09:29:28.382Z",
+  "totalFiles": 75,
+  "categories": {
+    "other": 12,
+    "authority": 20,
+    "page": 12,
+    "api-route": 2,
+    "layout": 1,
+    "component": 7,
+    "config": 5,
+    "lib": 1,
+    "docs": 1,
+    "script": 3,
+    "server": 3,
+    "schema": 1,
+    "router": 7
+  },
+  "recentCommits": [
+    {
+      "hash": "4ed8478",
+      "subject": "chore: initialize KEE project",
+      "date": "2026-03-13 17:48:53 +0530"
+    }
+  ],
+  "changedSince": null,
+  "files": [
+    {
+      "path": ".env.example",
+      "size": 292,
+      "modified": "2026-03-14T04:27:22.390Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": ".eslintrc.json",
+      "size": 41,
+      "modified": "2026-03-13T13:03:28.181Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": ".gitignore",
+      "size": 292,
+      "modified": "2026-03-14T04:17:20.753Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": ".~lock.ScriptureQuest_AdminPortal_Spec.docx#",
+      "size": 127,
+      "modified": "2026-03-13T12:28:49.830Z",
+      "category": "other",
+      "gitStatus": "clean"
+    },
+    {
+      "path": ".~lock.ScriptureQuest_Blueprint.docx#",
+      "size": 127,
+      "modified": "2026-03-13T12:29:33.622Z",
+      "category": "other",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/accessibility.md",
+      "size": 2429,
+      "modified": "2026-03-14T09:21:49.861Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/AI-OS.md",
+      "size": 4458,
+      "modified": "2026-03-14T09:20:28.815Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/ai-pipeline.md",
+      "size": 2131,
+      "modified": "2026-03-14T09:25:18.316Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/architecture.md",
+      "size": 3490,
+      "modified": "2026-03-14T09:20:53.732Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/caching.md",
+      "size": 1606,
+      "modified": "2026-03-14T09:22:48.591Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/CLAUDE.md",
+      "size": 4309,
+      "modified": "2026-03-14T09:20:07.929Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/coding-standards.md",
+      "size": 2265,
+      "modified": "2026-03-14T09:21:27.915Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/control-tower/tower-config.json",
+      "size": 2815,
+      "modified": "2026-03-14T09:28:38.374Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/control-tower/tower.js",
+      "size": 7285,
+      "modified": "2026-03-14T09:29:04.120Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/data-engineering.md",
+      "size": 2741,
+      "modified": "2026-03-14T09:25:37.093Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/decision-framework.md",
+      "size": 1796,
+      "modified": "2026-03-14T09:25:29.273Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/design-system.md",
+      "size": 3433,
+      "modified": "2026-03-14T09:21:40.464Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/feature-workflow.md",
+      "size": 1901,
+      "modified": "2026-03-14T09:25:33.444Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/observability.md",
+      "size": 1640,
+      "modified": "2026-03-14T09:22:53.235Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/performance.md",
+      "size": 2043,
+      "modified": "2026-03-14T09:22:15.050Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/scripts/context-compress.js",
+      "size": 7668,
+      "modified": "2026-03-14T09:27:56.595Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/scripts/context-scan.js",
+      "size": 6333,
+      "modified": "2026-03-14T09:27:25.691Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/scripts/review-authority.js",
+      "size": 7559,
+      "modified": "2026-03-14T09:28:28.056Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/security.md",
+      "size": 2248,
+      "modified": "2026-03-14T09:22:05.885Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ai/testing.md",
+      "size": 2255,
+      "modified": "2026-03-14T09:22:59.275Z",
+      "category": "authority",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(admin)/admin/page.tsx",
+      "size": 260,
+      "modified": "2026-03-14T04:15:02.556Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(admin)/admin/review/page.tsx",
+      "size": 321,
+      "modified": "2026-03-14T04:15:06.782Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(admin)/admin/upload/page.tsx",
+      "size": 338,
+      "modified": "2026-03-14T04:15:04.800Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(auth)/login/page.tsx",
+      "size": 405,
+      "modified": "2026-03-14T04:14:40.721Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(auth)/register/page.tsx",
+      "size": 413,
+      "modified": "2026-03-14T04:14:43.274Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(dashboard)/parent/page.tsx",
+      "size": 264,
+      "modified": "2026-03-14T04:14:55.381Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(dashboard)/teacher/page.tsx",
+      "size": 266,
+      "modified": "2026-03-14T04:14:58.273Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(learn)/lessons/page.tsx",
+      "size": 298,
+      "modified": "2026-03-14T04:14:45.673Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(learn)/lessons/[lessonId]/page.tsx",
+      "size": 394,
+      "modified": "2026-03-14T04:14:48.011Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(learn)/progress/page.tsx",
+      "size": 295,
+      "modified": "2026-03-14T04:14:53.084Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/(learn)/quiz/[quizId]/page.tsx",
+      "size": 365,
+      "modified": "2026-03-14T04:14:50.045Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/api/auth/[...nextauth]/route.ts",
+      "size": 80,
+      "modified": "2026-03-14T04:29:34.370Z",
+      "category": "api-route",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/api/trpc/[trpc]/route.ts",
+      "size": 371,
+      "modified": "2026-03-14T04:15:09.079Z",
+      "category": "api-route",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/globals.css",
+      "size": 23,
+      "modified": "2026-03-14T04:14:30.696Z",
+      "category": "other",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/layout.tsx",
+      "size": 676,
+      "modified": "2026-03-14T04:29:44.382Z",
+      "category": "layout",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "app/page.tsx",
+      "size": 346,
+      "modified": "2026-03-14T04:14:38.142Z",
+      "category": "page",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "components/learn/LessonPlayer.tsx",
+      "size": 3992,
+      "modified": "2026-03-14T04:29:21.965Z",
+      "category": "component",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "components/learn/QuizEngine.tsx",
+      "size": 6570,
+      "modified": "2026-03-14T04:29:24.420Z",
+      "category": "component",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "components/providers/TRPCProvider.tsx",
+      "size": 692,
+      "modified": "2026-03-14T04:29:29.282Z",
+      "category": "component",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "components/ui/EzraOwl.tsx",
+      "size": 1128,
+      "modified": "2026-03-14T04:28:25.900Z",
+      "category": "component",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "components/ui/LessonCard.tsx",
+      "size": 1396,
+      "modified": "2026-03-14T04:29:14.821Z",
+      "category": "component",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "components/ui/Navigation.tsx",
+      "size": 1250,
+      "modified": "2026-03-14T04:28:16.895Z",
+      "category": "component",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "components/ui/XPBar.tsx",
+      "size": 844,
+      "modified": "2026-03-14T04:28:28.811Z",
+      "category": "component",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "docker-compose.yml",
+      "size": 452,
+      "modified": "2026-03-14T04:27:13.344Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": "drizzle.config.ts",
+      "size": 223,
+      "modified": "2026-03-14T04:17:01.027Z",
+      "category": "config",
+      "gitStatus": "new"
+    },
+    {
+      "path": "lib/trpc.ts",
+      "size": 427,
+      "modified": "2026-03-14T04:29:26.991Z",
+      "category": "lib",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "next-env.d.ts",
+      "size": 206,
+      "modified": "2026-03-14T04:31:33.099Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": "next.config.js",
+      "size": 231,
+      "modified": "2026-03-14T04:14:01.761Z",
+      "category": "config",
+      "gitStatus": "new"
+    },
+    {
+      "path": "package.json",
+      "size": 1429,
+      "modified": "2026-03-14T05:07:53.566Z",
+      "category": "config",
+      "gitStatus": "new"
+    },
+    {
+      "path": "postcss.config.js",
+      "size": 71,
+      "modified": "2026-03-14T04:14:13.177Z",
+      "category": "config",
+      "gitStatus": "new"
+    },
+    {
+      "path": "README.md",
+      "size": 116,
+      "modified": "2026-03-13T12:17:18.337Z",
+      "category": "docs",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "scripts/extract-pdf.py",
+      "size": 173,
+      "modified": "2026-03-14T05:14:02.593Z",
+      "category": "script",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "scripts/parse-content.ts",
+      "size": 8850,
+      "modified": "2026-03-14T05:14:16.519Z",
+      "category": "script",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "scripts/seed.ts",
+      "size": 8733,
+      "modified": "2026-03-14T05:11:32.750Z",
+      "category": "script",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "ScriptureQuest_AdminPortal_Spec.docx",
+      "size": 43976,
+      "modified": "2026-03-13T12:23:33.501Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": "ScriptureQuest_AdminPortal_Spec.pdf",
+      "size": 609611,
+      "modified": "2026-03-13T12:29:10.539Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": "ScriptureQuest_Blueprint.docx",
+      "size": 36523,
+      "modified": "2026-03-13T12:23:36.570Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": "ScriptureQuest_Blueprint.pdf",
+      "size": 501103,
+      "modified": "2026-03-13T12:29:42.371Z",
+      "category": "other",
+      "gitStatus": "new"
+    },
+    {
+      "path": "server/auth.ts",
+      "size": 631,
+      "modified": "2026-03-14T04:29:31.562Z",
+      "category": "server",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/db/index.ts",
+      "size": 258,
+      "modified": "2026-03-14T04:16:02.846Z",
+      "category": "server",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/db/schema.ts",
+      "size": 10933,
+      "modified": "2026-03-14T04:16:49.717Z",
+      "category": "schema",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/routers/auth.router.ts",
+      "size": 537,
+      "modified": "2026-03-14T04:15:37.028Z",
+      "category": "router",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/routers/dashboard.router.ts",
+      "size": 768,
+      "modified": "2026-03-14T04:30:49.887Z",
+      "category": "router",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/routers/gamification.router.ts",
+      "size": 1272,
+      "modified": "2026-03-14T04:30:47.194Z",
+      "category": "router",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/routers/lesson.router.ts",
+      "size": 1526,
+      "modified": "2026-03-14T04:30:34.915Z",
+      "category": "router",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/routers/progress.router.ts",
+      "size": 1355,
+      "modified": "2026-03-14T04:30:43.117Z",
+      "category": "router",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/routers/quiz.router.ts",
+      "size": 2019,
+      "modified": "2026-03-14T04:30:38.730Z",
+      "category": "router",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/routers/_app.ts",
+      "size": 567,
+      "modified": "2026-03-14T04:15:28.300Z",
+      "category": "router",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "server/trpc.ts",
+      "size": 903,
+      "modified": "2026-03-14T04:15:25.106Z",
+      "category": "server",
+      "gitStatus": "clean"
+    },
+    {
+      "path": "tsconfig.json",
+      "size": 572,
+      "modified": "2026-03-14T04:13:51.438Z",
+      "category": "config",
+      "gitStatus": "new"
+    }
+  ]
+}

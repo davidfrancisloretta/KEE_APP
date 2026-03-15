@@ -1,0 +1,88 @@
+{
+  "project": "ScriptureQuest (KEE)",
+  "version": "1.0.0",
+
+  "authorityFiles": {
+    "root": "ai/CLAUDE.md",
+    "architecture": "ai/architecture.md",
+    "codingStandards": "ai/coding-standards.md",
+    "designSystem": "ai/design-system.md",
+    "accessibility": "ai/accessibility.md",
+    "security": "ai/security.md",
+    "performance": "ai/performance.md",
+    "caching": "ai/caching.md",
+    "observability": "ai/observability.md",
+    "testing": "ai/testing.md",
+    "aiPipeline": "ai/ai-pipeline.md",
+    "decisionFramework": "ai/decision-framework.md",
+    "featureWorkflow": "ai/feature-workflow.md",
+    "dataEngineering": "ai/data-engineering.md"
+  },
+
+  "agents": {
+    "architect": {
+      "definition": "ai/control-tower/agents/architect.md",
+      "authorities": ["architecture", "decisionFramework", "dataEngineering"],
+      "triggers": ["schema change", "new feature", "refactor", "migration"]
+    },
+    "frontend": {
+      "definition": "ai/control-tower/agents/frontend.md",
+      "authorities": ["designSystem", "accessibility", "performance", "codingStandards"],
+      "triggers": ["ui task", "component", "page", "styling", "animation"]
+    },
+    "backend": {
+      "definition": "ai/control-tower/agents/backend.md",
+      "authorities": ["architecture", "security", "caching", "codingStandards", "dataEngineering"],
+      "triggers": ["api", "router", "auth", "database", "business logic"]
+    },
+    "qa": {
+      "definition": "ai/control-tower/agents/qa.md",
+      "authorities": ["testing", "codingStandards"],
+      "triggers": ["test", "coverage", "quality"]
+    },
+    "reviewer": {
+      "definition": "ai/control-tower/agents/reviewer.md",
+      "authorities": ["codingStandards", "security", "accessibility", "performance"],
+      "triggers": ["review", "pr", "code check"]
+    }
+  },
+
+  "workflows": {
+    "feature": {
+      "definition": "ai/control-tower/workflows/feature-flow.md",
+      "steps": ["classify", "plan", "implement", "test", "review"]
+    },
+    "bugfix": {
+      "definition": "ai/control-tower/workflows/bugfix-flow.md",
+      "steps": ["reproduce", "diagnose", "fix", "test", "review"]
+    }
+  },
+
+  "skills": [
+    "ai/skills/scaffold-component.md",
+    "ai/skills/scaffold-router.md",
+    "ai/skills/seed-content.md",
+    "ai/skills/run-audit.md",
+    "ai/skills/compress-context.md",
+    "ai/skills/review-pr.md",
+    "ai/skills/i18n-sync.md"
+  ],
+
+  "context": {
+    "scanManifest": "ai/context/scan-manifest.json",
+    "compressedContext": "ai/context/compressed-context.md",
+    "maxTokenBudget": 8000
+  },
+
+  "i18n": {
+    "defaultLocale": "en",
+    "locales": ["en", "hi", "ta", "te", "kn"],
+    "messagesDir": "messages/"
+  },
+
+  "review": {
+    "autoReview": true,
+    "blockOnErrors": true,
+    "rules": "ai/scripts/review-authority.js"
+  }
+}
